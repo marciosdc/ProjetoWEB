@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://richfaces.org/ui">
+	
+	<h:head>
+	
+		<style>
+		
+			#menu li { display: inline; }
+			
+			#menu li a 
+			{ 
+				font: bold 14px verdana;
+    			padding: 4px 23px 2px;
+    			text-decoration: none;
+    			color: #6B809B;
+    			border-radius: 6px 25px 0 0;
+    			background:  none repeat scroll 0 0 white;
+			}
+			
+			.current
+			{
+				font: bold 14px verdana;
+    			padding: 4px 23px 2px;
+    			text-decoration: none;
+    			color: #6B809B;
+    			border-radius: 6px 25px 0 0;
+    			background:  none repeat scroll 0 0 white;
+    			z-index: 11;
+			}
+			
+			#menu li a:HOVER 
+			{ 
+
+			}
+		</style>
+	</h:head>
+		<p>			
+			<div id="menu">
+				<h:form>
+					<ul>
+						<li>
+							<h:commandLink value="Alunos" action="/cadastros/telaAluno.xhtml"/>
+						</li>
+						
+						<li>
+							<h:commandLink value="Professores" action="/cadastros/telaProfessor.xhtml"/>
+						</li>
+						
+						<li>
+							<h:commandLink value="Administrativo" action="/cadastros/telaADM.xhtml"/>
+						</li>
+						
+					</ul>
+				</h:form>
+			</div>
+		</p>
+</ui:composition>

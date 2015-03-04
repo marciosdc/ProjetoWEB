@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:rich="http://richfaces.org/rich">
+
+	<h:head>
+		<style>
+			#subMenuAdministracao li { display: inline; }
+			
+			#subMenuAdministracao li a 
+			{ 
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			text-decoration: none;
+    			color: #6B809B;
+    			border-radius: 6px 25px 0 0;
+			}
+			
+		</style>
+
+	</h:head>
+		<p>			
+			<div id="subMenuAdministracao">
+				<h:form>
+					<ul>
+						<li><h:commandLink value="Funcionários" action="/pessoal/telaFuncionarios?faces-redirect=true"/></li>
+						<li><h:commandLink value="Usuários" action="/seguranca/telaUsuarios?faces-redirect=true"/></li>
+						<li><h:commandLink value="Dados da Empresa" action="/administrativo/telaEmpresa?faces-redirect=true"/></li>
+						<li><h:commandLink value="Auditoria" action="/administrativo/telaAuditLog?faces-redirect=true"/></li>
+						<li><h:commandLink value="Veículos" action="/administrativo/telaVeiculos?faces-redirect=true"/></li>
+					</ul>
+				</h:form>
+			</div>
+		</p>
+
+</ui:composition>

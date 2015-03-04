@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:rich="http://richfaces.org/rich"
+	  xml:lang="en" lang="en">
+	<h:head></h:head>
+	<h:body>
+		<style>
+		
+			#subMenuOperacao ul li ul
+			{
+				position: absolute;
+				display: none;
+				left: 180px;
+			} 
+			
+			#subMenuOperacao li { display: inline; }
+			
+			#subMenuOperacao li a 
+			{ 
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			text-decoration: none;
+    			color: #6B809B;
+			}
+			
+			.coordenacao
+			{
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			color: #6B809B;
+			}
+			
+			.configuracoes
+			{
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			color: #6B809B;
+			}
+			
+			.of
+			{
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			color: #6B809B;
+			}
+			
+			#subMenuOperacao li:hover ul 
+			{
+			    display: block;
+			}
+			
+		</style>
+		<p>			
+			<div id="subMenuOperacao">
+				<h:form>
+					<ul>
+						<li><h:commandLink value="Obras" action="/operacao/telaObras?faces-redirect=true"/></li>
+						<li><h:commandLink value="Solicitações" action="/operacao/telaLiberacaoSolicitacoes?faces-redirect=true"/></li>
+						<li>
+							<h:outputText value="Coordenação" styleClass="coordenacao"/>
+							<ul>
+								<rich:panel >
+									<h:panelGrid columns="1">
+										<li><h:commandLink value="Supervisores" action="/operacao/telaFiscais?faces-redirect=true"/></li>
+										<li><h:commandLink value="Planejar Turmas" action="/operacao/telaPlanejarEquipes?faces-redirect=true"/></li>
+										<li><h:commandLink value="Solicitação de Intervenção" action="/operacao/telaSolicitacaoIntervencao?faces-redirect=true"/></li>
+										<li><h:commandLink value="Liberação de Materiais" action="/operacao/telaSolicitaLiberacaoMateriais?faces-redirect=true" /></li>
+										<li><h:commandLink value="Transferências de Materiais" action="/operacao/telaSolicitaTransferenciaMateriaisReserva?faces-redirect=true"/></li>
+										<li><h:commandLink value="Acompanhamento das Obras" action="/operacao/telaAcompanhamentoTurmas?faces-redirect=true"/></li>
+										<li><h:commandLink value="Antecipação de Devolução de Materiais" action="/operacao/telaAntecipacaoDevolucaoMaterial?faces-redirect=true"/></li>
+										<li><h:commandLink value="GSE" action="/operacao/telaGse?faces-redirect=true"/></li>
+										<li><h:commandLink value="AsBuilt" action="/operacao/telaAsBuilt?faces-redirect=true"/></li>
+									</h:panelGrid>
+								</rich:panel>
+							</ul>
+						</li>
+						<li><h:commandLink value="Fechamento" action="/operacao/telaFechamento?faces-redirect=true"/></li>
+						<li>
+							<h:outputText value="OF" styleClass="of"/>
+							<ul style="left: 450px;">
+								<rich:panel >
+									<h:panelGrid columns="1">
+										<li><h:commandLink value="Cadastro" action="/operacao/telaCadastroOF?faces-redirect=true"/></li>
+										<li><h:commandLink value="Fornecedor" action="/operacao/telaFornecedorOF?faces-redirect=true"/></li>
+										<li><h:commandLink value="Motorista" action="/operacao/telaMotoristaOF?faces-redirect=true"/></li>
+									</h:panelGrid>
+								</rich:panel>
+							</ul>
+						</li>
+						<li><h:commandLink value="Turmas" action="/operacao/telaTurmas?faces-redirect=true"/></li>
+						<li>
+							<h:outputText value="Configurações" styleClass="configuracoes"/>
+							<ul style="left: 650px;">
+								<rich:panel >
+									<h:panelGrid columns="1">
+										<li><h:commandLink value="Serviços" action="/operacao/telaServicos?faces-redirect=true"/></li>
+										<li><h:commandLink value="Materiais" action="/operacao/telaMateriais?faces-redirect=true"/></li>
+										<li><h:commandLink value="Estruturas" action="/operacao/telaEstruturas?faces-redirect=true"/></li>
+										<li><h:commandLink value="Programa" action="/operacao/telaPrograma?faces-redirect=true"/></li>
+									</h:panelGrid>
+								</rich:panel>
+							</ul>
+						</li>
+					</ul>
+				</h:form>
+			</div>
+		</p>
+	</h:body>
+</ui:composition>

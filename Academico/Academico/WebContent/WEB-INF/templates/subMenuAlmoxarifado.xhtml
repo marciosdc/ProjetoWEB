@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:rich="http://richfaces.org/rich">
+	<h:head></h:head>
+	<h:body>
+		<style>
+			
+			#subMenuAlmoxarifado ul li ul
+			{
+				position: fixed;
+				display: none;
+				left: 100px;
+			} 
+		
+			#subMenuAlmoxarifado li { display: inline; }
+			
+			#subMenuAlmoxarifado li a 
+			{ 
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			text-decoration: none;
+    			color: #6B809B;
+    			border-radius: 6px 25px 0 0;
+			}
+			
+			.devolucoes
+			{
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			color: #6B809B;
+			}
+			
+			.relatorios
+			{
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			color: #6B809B;
+			}
+			
+			.epiepc
+			{
+				font: bold 12px verdana;
+    			padding: 4px 23px 2px;
+    			color: #6B809B;
+			}
+			
+			#subMenuAlmoxarifado li:hover ul 
+			{
+			    display: block;
+			}
+			
+		</style>
+		<p>			
+			<div id="subMenuAlmoxarifado">
+				<h:form>
+					<ul>
+						<li><h:commandLink value="Reservas" action="/almoxarifado/telaReservas?faces-redirect=true"/></li>
+						<li>
+							<h:outputText value="Devoluções" styleClass="devolucoes"/>
+							<ul>
+								<rich:panel >
+									<h:panelGrid columns="1">
+										<li><h:commandLink value="Estoque Móvel" action="/almoxarifado/telaDevolucoes?faces-redirect=true"/></li>
+										<li><h:commandLink value="Coelba" action="/almoxarifado/telaDevolucaoCoelba?faces-redirect=true" /></li>
+									</h:panelGrid>
+								</rich:panel>
+							</ul>
+						</li>
+						<li><h:commandLink value="Transferências" action="/almoxarifado/telaTransferenciasReservas?faces-redirect=true"/></li>
+						<li>
+							<h:outputText value="Relatórios" styleClass="relatorios"/>
+							<ul style="left: 380px;">
+								<rich:panel >
+									<h:panelGrid columns="1">
+										<li><h:commandLink value="Estoque" action="/almoxarifado/telaEstoque?faces-redirect=true"/></li>
+									</h:panelGrid>
+								</rich:panel>
+							</ul>
+						</li>
+						<li>
+							<h:outputText value="EPI / EPC" styleClass="epiepc"/>
+							<ul style="left: 490px;">
+								<rich:panel >
+									<h:panelGrid columns="1">
+										<li><h:commandLink value="Materiais" action="/almoxarifado/telaMaterialEPIEPC?faces-redirect=true"/></li>
+										<li><h:commandLink value="Entrada" action="/almoxarifado/telaPedidoEntradaMaterialEPIEPC?faces-redirect=true"/></li>
+										<li><h:commandLink value="Saída EPI" action="/almoxarifado/telaPedidoSaidaEPI?faces-redirect=true"/></li>
+										<li><h:commandLink value="Saída EPC" action="/almoxarifado/telaPedidoSaidaEPC?faces-redirect=true"/></li>
+									</h:panelGrid>
+								</rich:panel>
+							</ul>
+						</li>
+					</ul>
+				</h:form>
+			</div>
+		</p>
+	</h:body>
+</ui:composition>

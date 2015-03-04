@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+	<h:head>
+		
+	</h:head>
+	  
+	<ui:composition template="/WEB-INF/templates/layout_menu_inicial.xhtml">
+	
+		<ui:define name="centro">
+		
+			<h:form>
+				<p:panel header="Cadastro de Professores">
+				
+					<h:panelGrid columns="4">
+					
+						<p:outputLabel value="Nome"/>
+						<p:inputText value="#{telaProfessor.valorPesquisa}"/>
+						<p:commandButton action="#{telaProfessor.pesquisar()}" value="Pesquisar" update="dtProfessores"/>
+						<p:commandButton action="#{telaProfessor.cadastrarProfessor()}" value="Cadastrar"/>
+					
+					</h:panelGrid>
+					
+					<p:dataTable id="dtProfessores" value="#{telaProfessor.professoresPesquisados}" var="professor">
+					
+						<p:column headerText="Nome">
+							<h:outputText value="#{professor.nome}" />
+						</p:column>
+						
+						<p:column headerText="Descrição">
+							<h:outputText value="#{professor.descricao}" />
+						</p:column>
+					</p:dataTable>
+				
+				</p:panel>
+				
+			</h:form>
+						
+		</ui:define>
+	</ui:composition>
+</html>

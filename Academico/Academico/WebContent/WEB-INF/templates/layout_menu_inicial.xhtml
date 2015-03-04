@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<h:outputStylesheet library="css" name="styles_templates.css"/>
+	</h:head>
+	
+	<h:body>
+	
+		<style>
+			#top
+			{
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				background:  none repeat scroll 0 0 #DBE9F7;
+				left: 0;
+			}
+			
+			#centro
+			{
+				position: absolute;
+				left: 30px;
+				top: 180px;
+				width: 95%;
+			}
+			
+			#menu ul
+			{
+				left: 320px;
+			    list-style: none outside none;
+			    padding: 0;
+			    position: absolute;
+			    top: 87px;			    
+			}
+			
+			#subMenu
+			{
+				position: absolute;
+				left: 0;
+				top: 123px;
+				z-index: 1;
+			}			
+
+			#subMenuBG 
+			{
+			    background: none repeat scroll 0 0 #FFFFFF;
+			    border-bottom: 1px solid #9B9B9B;
+			    border-top: 1px solid #DAD8CB;
+			    box-shadow: 0 1px 0 #E3E3E3;
+			    height: 34px;
+			    left: 0;
+			    margin: 0;
+			    min-width: 1007px;
+			    padding: 0;
+			    position: absolute;
+			    top: 123px;
+			    width: 100%;
+			}
+			
+			.rf-ntf-cnt 
+			{
+			    background-color: #FBFCD7;
+			    font-size: 11px;
+			    width: 800px;
+			}
+			
+			.rf-ntf-pos-tl 
+			{
+			    top: 123px;
+			}
+			
+		</style>
+		
+		<div id="top">
+			<ui:insert name="top">
+				<ui:include src="top.xhtml"/>
+			</ui:insert>
+		</div>
+		
+		<div id="menu">
+			<ui:insert name="menu">
+				<ui:include src="menu.xhtml" />
+			</ui:insert>
+		</div>
+		
+		<div id="subMenu">
+			<ui:insert name="subMenu">
+				<ui:include src="#{menu.currentSubMenu}" />
+			</ui:insert>
+		</div>
+		
+		<div id="subMenuBG" />
+		
+		<div id="centro">
+			<ui:insert name="centro">
+
+			</ui:insert>
+		</div>
+		
+		<p:growl id="growl" showDetail="true" sticky="true" globalOnly="true" />
+		
+	</h:body>
+</html>
