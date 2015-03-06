@@ -1,5 +1,6 @@
 
 public class Commit
 {
-	private String teste;
+	private String teste1;
+	private String nome;
 }
