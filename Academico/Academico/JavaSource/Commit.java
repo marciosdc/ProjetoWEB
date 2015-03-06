@@ -9,5 +9,4 @@ public class Commit
 	private String GIT2;
 	
 	
-	
 }
