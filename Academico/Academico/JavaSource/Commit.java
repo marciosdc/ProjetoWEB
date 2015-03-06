@@ -6,7 +6,7 @@ public class Commit
 
 	private String teste1;
 	private String nome;
-	private String GIT4;
+	private String GIT1;
 	
 	
 }
